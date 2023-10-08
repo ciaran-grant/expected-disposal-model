@@ -8,6 +8,7 @@ authors = [
     { name = "Ciaran Grant", email = "ciaran.grant@hotmail.co.uk" }
 ]
 requires-python = ">=3.11"
+
 dependencies = [
     "pandas",
     "numpy",
@@ -18,3 +19,6 @@ dependencies = [
     "optuna",
     "betacal"
 ]
+
+[tools.setuptools]
+packages = ['expected_disposal_model']
