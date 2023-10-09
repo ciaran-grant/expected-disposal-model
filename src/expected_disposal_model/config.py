@@ -1,5 +1,5 @@
 # Raw Data
-raw_file_path = ""
+raw_file_path = "/Users/ciaran/Documents/Projects/AFL/data/match_chains.csv"
 
 # Preprocessor
 preprocessor_file_path = ""

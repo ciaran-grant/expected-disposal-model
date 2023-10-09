@@ -1,5 +1,5 @@
-from preprocessing import preprocessing_function
-from modelling_data_contract import ModellingDataContract
+from expected_disposal_model.data_preparation.preprocessing import convert_chains_to_schema, create_gamestate_features, filter_disposals
+from expected_disposal_model.modelling_data_contract import ModellingDataContract
 
 from sklearn.base import BaseEstimator, TransformerMixin
 
@@ -16,12 +16,6 @@ class Preprocessor(BaseEstimator, TransformerMixin):
         
     def fit(self, X):
 
-        # Missing Values
-        
-        # Scaling
-        
-        # Mappings
-        
         # Keep only modelling columns
         self.modelling_cols = ModellingDataContract.feature_list
                         
@@ -37,9 +31,15 @@ class Preprocessor(BaseEstimator, TransformerMixin):
             Dataframe: Transformed data with modelling columns and no missing values.
         """
 
-        X = preprocessing_function(X)
+        # Get schema
+        X_schema = convert_chains_to_schema(X)
+        # Get features
+        X_features = create_gamestate_features(X_schema)
         
-        X_features = X[ModellingDataContract.feature_list]
+        X_schema = pd.concat([X_schema, X_features], axis='columns')
+        X_schema = filter_disposals(X_schema)
+        
+        X_features = X_schema[ModellingDataContract.feature_list]
                 
         return X_features
     

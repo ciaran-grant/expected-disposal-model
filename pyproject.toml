@@ -1,5 +1,5 @@
 [project]
-name = "expected-disposal-model"
+name = "expected_disposal_model"
 description = "Building and analysing an expected disposal model."
 readme = "README.md"
 license = {file = "LICENSE"}
@@ -11,14 +11,19 @@ requires-python = ">=3.11"
 
 dependencies = [
     "pandas",
-    "numpy",
+    "numpy==1.24.0",
     "joblib",
     "matplotlib",
     "seaborn",
     "xgboost",
     "optuna",
-    "betacal"
+    "betacal",
+    "shap",
 ]
 
-[tools.setuptools]
-packages = ['expected_disposal_model']
+[project.urls]
+"Repository" = "https://github.com/ciaran-grant/expected-disposal-model"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
