@@ -6,7 +6,7 @@ from expected_disposal_model.modelling_data_contract import ModellingDataContrac
 ### Filtering for Inside 50s
 def filter_disposals(chains):
     
-    disposals = chains[(chains['action_type'] == "Kick") & (chains['action_type'] == "Handball")]
+    disposals = chains[(chains['action_type'] == "Kick") | (chains['action_type'] == "Handball")]
 
     return disposals
 
@@ -262,7 +262,7 @@ def create_match_gamestate_features(actions, match_id, num_prev_actions=3):
     for actions in range(len(states)):
         state = pd.concat([
             # action_type(states[actions]),
-            # action_type_onehot(states[actions]),
+            action_type_onehot(states[actions]),
             # outcome(states[actions]),
             outcome_onehot(states[actions]),
             # action_outcome_onehot(states[actions]),

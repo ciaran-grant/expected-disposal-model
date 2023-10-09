@@ -8,8 +8,13 @@ class ModellingDataContract:
     ID_COL = "Match_ID"
     RESPONSE = "Disposal"
     TRAIN_TEST_SPLIT_COL = "ModellingFilter"
+    
+    action_types = ['Kick', 'Handball']
+    outcome_types = ['effective', 'ineffective', 'clanger']
 
     feature_list = [
+        'type_Kick_a0',
+        'type_Handball_a0',
         'quarter_a0',
         'quarter_seconds_a0',
         'overall_seconds_a0',
@@ -20,6 +25,8 @@ class ModellingDataContract:
         'dx_a0',
         'dy_a0',
         'movement_a0',
+        'type_Kick_a1',
+        'type_Handball_a1',
         'outcome_effective_a1',
         'outcome_ineffective_a1',
         'outcome_clanger_a1',
@@ -33,6 +40,8 @@ class ModellingDataContract:
         'dx_a1',
         'dy_a1',
         'movement_a1',
+        'type_Kick_a2',
+        'type_Handball_a2',
         'outcome_effective_a2',
         'outcome_ineffective_a2',
         'outcome_clanger_a2',
