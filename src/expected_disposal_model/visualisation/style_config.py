@@ -1,0 +1,3 @@
+font_path = "/Users/ciaran/Documents/Projects/AFL/git-repositories/expected-disposal-model/src/expected_disposal_model/visualisation/fonts"
+logo_path = "/Users/ciaran/Documents/Projects/AFL/git-repositories/expected-disposal-model/src/expected_disposal_model/visualisation/logos"
+mplstyle_path = "/Users/ciaran/Documents/Projects/AFL/git-repositories/expected-disposal-model/src/expected_disposal_model/visualisation/mplstyle"
