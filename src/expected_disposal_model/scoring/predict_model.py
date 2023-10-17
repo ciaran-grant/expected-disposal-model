@@ -18,7 +18,7 @@ def predict_model(raw_file_path, preprocessor_file_path, model_file_path, output
     schema_chains = convert_chains_to_schema(chains)
     disposals = filter_disposals(schema_chains)
     
-    labels = create_labels(schema_chains)
+    labels = create_labels(chains)
     
     schema_chains = pd.concat([disposals, chain_features, labels], axis=1)
     
