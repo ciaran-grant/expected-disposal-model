@@ -28,7 +28,7 @@ def predict_model(raw_file_path, preprocessor_file_path, model_file_path, output
     exp_disposal_model = joblib.load(model_file_path)
     
     # Scoring Model
-    schema_chains['xDisposal'] = exp_disposal_model.predict(chain_features)
+    schema_chains['xDisposal'] = exp_disposal_model.predict_proba(chain_features)[:, 1]
     print("Scoring.. complete.")
     
     # Merge back to chains
