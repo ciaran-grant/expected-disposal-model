@@ -39,7 +39,7 @@ class Preprocessor(BaseEstimator, TransformerMixin):
         X_schema = pd.concat([X_schema, X_features], axis='columns')
         X_schema = filter_disposals(X_schema)
         
-        X_features = X_schema[ModellingDataContract.feature_list]
+        # X_features = X_schema[ModellingDataContract.feature_list]
                 
-        return X_features
+        return X_schema
     
